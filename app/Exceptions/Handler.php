@@ -59,19 +59,19 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     protected function unauthenticated($request, AuthenticationException $exception)
-    {
-        if ($request->expectsJson()){
-            return response()->json(['message' => $exception->getMessage()], 401);
-        }
-        $guard = array_get($exception->guards(), 0);
+{
+    if ($request->expectsJson()) {
+        return response()->json(['message' => $exception->getMessage()], 401);
+    }
+    $guard = array($exception->guards(), 0);
     switch($guard){
         case 'admin':
             $login = 'admin.login';
             break;
         default:
-            $login = 'login';
+            $login = 'admin.login';
             break;
-        }
-        return redirect()->guest(route($login));
     }
+    return redirect()->guest(route($login));
+}
 }

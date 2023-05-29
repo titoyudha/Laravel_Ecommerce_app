@@ -26,7 +26,8 @@
             </a>
         </li>
         <li>
-            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}" href="{{ route('admin.categories.index') }}">
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}"
+                href="{{ route('admin.categories.index') }}">
                 <i class="app-menu__icon fa fa-tags"></i>
                 <span class="app-menu__label">Categories</span>
             </a>
@@ -36,9 +37,9 @@
                 <i class="app-menu__icon fa fa-th"></i>
                 <span class="app-menu__label">Attributes</span>
             </a>
-        </li>
+        </li>                                           ccccccccc
         <li>
-            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}" href="{{ route('admin.settings') }}">
+            <a class="dropdown-item" href="{{ route('admin.settings') }}"><i class="fa fa-cog fa-lg"></i> Settings</a>
                 <i class="app-menu__icon fa fa-cogs"></i>
                 <span class="app-menu__label">Settings</span>
             </a>
