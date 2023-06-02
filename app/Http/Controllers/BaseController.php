@@ -23,11 +23,11 @@ class BaseController extends Controller
         return response()->view('errors'.$errorCode, $data, $errorCode);
     }
 
-    protected function responseJSON($error = true, $responsecode = 200, $message = [], $data = null)
+    protected function responseJSON($error = true, $responseCode = 200, $message = [], $data = null)
     {
         return response()->json([
             'error' => $error,
-            'response_code' => $responsecode,
+            'response_code' => $responseCode,
             'message' => $message,
             'data' => $data
         ]);

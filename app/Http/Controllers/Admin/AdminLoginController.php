@@ -7,12 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth as Auth;
 
-class LoginController extends Controller
+class AdminLoginController extends Controller
 {
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect admins aftr login.
+     * Where to redirect admins after login.
      *
      * @var string
      */
