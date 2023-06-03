@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use App\Contracts\CategoryContract;
 use App\Contracts\BrandContract;
+use App\Contracts\ProductContract;
 use App\Repositories\BrandRepository;
+use App\Repositories\ProductRepository;
 use Attribute;
 use CategoryRepository;
 use Illuminate\Support\ServiceProvider;
@@ -16,6 +18,7 @@ class RepositoryServiceProvider extends ServiceProvider
         CategoryContract::class => CategoryRepository::class,
         AttributeContract::class => AttributeRepository::class,
         BrandContract::class => BrandRepository::class,
+        ProductContract::class => ProductRepository::class,
     ];
     /**
      * Register services.
