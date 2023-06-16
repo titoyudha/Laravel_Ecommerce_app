@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('product_attributes');
+
          Schema::create('product_attributes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->integer('quantity');
             $table->decimal('price')->nullable();
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_attribute_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
