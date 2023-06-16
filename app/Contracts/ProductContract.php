@@ -9,5 +9,7 @@ interface ProductContract
     public function findProductById(int $id);
     public function updateProduct(array $params);
     public function deleteProduct($id);
+    public function findProductBySlug($slug);
+
 
 }

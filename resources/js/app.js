@@ -34,6 +34,7 @@ if (token) {
     );
 }
 
+import Vue from "vue";
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -59,3 +60,8 @@ Vue.use(VueSwal);
 const app = new Vue({
     el: "#app",
 });
+
+Vue.component(
+    "product-attributes",
+    require("./components/ProductAttributes").default
+);

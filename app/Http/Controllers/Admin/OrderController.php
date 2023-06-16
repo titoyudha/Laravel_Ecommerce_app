@@ -9,7 +9,7 @@ class OrderController extends BaseController
 {
     protected $orderRepository;
 
-    public function __construct()
+    public function __construct(OrderContract $orderRepository)
     {
         $this->orderRepository = $orderRepository;
     }

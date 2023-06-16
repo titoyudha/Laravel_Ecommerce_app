@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Models\Setting;
+use App\Models\Setting;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SettingsTableSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      */

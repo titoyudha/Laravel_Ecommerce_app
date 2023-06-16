@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contracts\BrandContract;
-use App\Http\Controllers\BaseController;
 
 class AdminBrandController extends Controller
 {

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Models\Admin;
+use App\Models\Admin as Admin;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 class AdminsTableSeeder extends Seeder
@@ -16,9 +16,9 @@ class AdminsTableSeeder extends Seeder
         $faker = Faker::create();
 
         Admin::create([
-            'name' => $faker->name(),
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('password'),
+            'name'      =>  $faker->name,
+            'email'     =>  'admin@admin.com',
+            'password'  =>  bcrypt('password'),
         ]);
     }
 }

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth as Auth;
 
-class AdminLoginController extends Controller
+class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
@@ -16,7 +16,7 @@ class AdminLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,11 +36,7 @@ class AdminLoginController extends Controller
         return view('admin.auth.login');
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Validation\ValidationException
-     */
+
     public function login (Request $request)
     {
         $this->validate($request, [

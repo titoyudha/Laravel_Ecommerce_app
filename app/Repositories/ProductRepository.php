@@ -82,4 +82,11 @@ class ProductRepository extends BaseRepository implements ProductContract
 
         return $product;
     }
+
+    public function findProductBySlug($slug)
+    {
+        $product = Product::where('slug', $slug)->first();
+
+        return $product;
+    }
 }
