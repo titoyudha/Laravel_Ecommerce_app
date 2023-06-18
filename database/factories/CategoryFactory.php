@@ -2,18 +2,28 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Category;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
- */
-$factory->define(Category::class, function (Faker $faker) {
-    return [
-        'name'          =>  $faker->name,
-        'description'   =>  $faker->realText(100),
-        'parent_id'     =>  1,
-        'menu'          =>  1,
-    ];
-});
+class CategoryFactory extends Factory
+{
+    protected $model = Category::class;
+
+    public function definition(): array
+    {
+        return [
+            'name' => $this->faker->name,
+            'slug' => $this->faker->unique()->slug,
+            'description' => $this->faker->unique()->slug(),
+            'parent_id' => 1,
+            'menu' => 0,
+        ];
+    }
+}
+
+
+
+
+
+
