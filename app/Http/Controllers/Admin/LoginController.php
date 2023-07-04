@@ -40,9 +40,10 @@ class LoginController extends Controller
     public function login (Request $request)
     {
         $this->validate($request, [
-            'email'=>'required|email',
-            'password'=>'required|password'
+            'email' => 'required|email',
+            'password' => 'required|min:8', // Example: minimum length of 8 characters
         ]);
+
         if(Auth::guard('admin') ->attempt([
             'email' => $request->email,
             'password'=> $request->password,
